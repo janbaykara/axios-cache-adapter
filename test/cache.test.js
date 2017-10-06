@@ -26,12 +26,15 @@ test('Required lib', () => {
 
 test('Execute GET request', () => {
   const definition = {
-    url: 'http://localhost:5000/personnes/9000053656581',
+    url: 'https://jsonplaceholder.typicode.com/posts/1',
     method: 'get'
   }
 
   return api(definition).then(response => {
-    const expectedData = expect.objectContaining({ nom: 'BECHEAU' })
+    const expectedData = expect.objectContaining({
+      "userId": 1,
+      "id": 1
+    })
 
     expect(response.data).toEqual(expectedData)
 
