@@ -2508,7 +2508,7 @@ function setupCache() {
   config.debug = config.debug || false;
 
   config.exclude = config.exclude || {};
-  config.exclude.query = config.exclude.query || true;
+  config.exclude.query = config.exclude.query !== undefined ? config.exclude.query : true;
   config.exclude.paths = config.exclude.paths || [];
   config.exclude.filter = config.exclude.filter || null;
 
